@@ -1,0 +1,15 @@
+*/*.exe
+*/Makefile
+_build_
+bin
+lib
+.cache
+*/*.make
+*/*.vcxproj
+*/*.vcxproj.*
+*.sln
+.vscode
+.vs
+
+# Neovim LSP linking
+compile_commands.json
