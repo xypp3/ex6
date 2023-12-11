@@ -173,17 +173,24 @@ int main() try
 	//TODO: create VBOs and VAO
 	SimpleMeshData sd{
 		// Positions
-		.positions = { { -1.f, -1.f, 3.f },
-		 { +1.f, -1.f, 3.f },
-		 { +1.f, -1.f, -3.f },
-		 { -1.f, -1.f, 3.f },
-		 { +1.f, -1.f, -3.f },
-		 { -1.f, -1.f, -3.f } },
+		{ 
+			{ -1.f, -1.f, 3.f },
+			{ +1.f, -1.f, 3.f },
+			{ +1.f, -1.f, -3.f },
+			{ -1.f, -1.f, 3.f },
+			{ +1.f, -1.f, -3.f },
+			{ -1.f, -1.f, -3.f }
+		},
 
 		// Texture coordinates
-		.texcoords = { { 0.f, 0.f }, { 1.f, 0.f },
-		 { 0.f, 0.f }, { 1.f, 3.f },
-		{ 1.f, 3.f }, { 0.f, 3.f } }
+		{ 
+			{ 0.f, 0.f },
+			{ 1.f, 0.f },
+			{ 1.f, 3.f },
+			{ 0.f, 0.f }, 
+			{ 1.f, 3.f },
+			{ 0.f, 3.f }
+		}
 	};
 
 	GLuint vao = create_vao(sd);
@@ -279,6 +286,7 @@ int main() try
 		
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture( GL_TEXTURE_2D, textureObjectId );
+
 		glBindVertexArray( vao );
 
 		glDrawArrays(GL_TRIANGLES, 0, vertexCount);
