@@ -14,9 +14,6 @@ struct SimpleMeshData
 	std::vector<Vec2f> texcoords;
 };
 
-SimpleMeshData concatenate( SimpleMeshData, SimpleMeshData const& );
-
-
 GLuint create_vao( SimpleMeshData const& );
 
 #endif // SIMPLE_MESH_HPP_C6B749D6_C83B_434C_9E58_F05FC27FEFC9

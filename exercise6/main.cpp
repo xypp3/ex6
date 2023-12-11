@@ -281,7 +281,7 @@ int main() try
 		glBindTexture( GL_TEXTURE_2D, textureObjectId );
 		glBindVertexArray( vao );
 
-		glDrawElements(GL_TRIANGLES, vertexCount, GL_UNSIGNED_INT, 0);
+		glDrawArrays(GL_TRIANGLES, 0, vertexCount);
 		// glDrawArrays( GL_TRIANGLES, 0, vertexCount );
 
 		// Reset state

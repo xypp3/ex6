@@ -1,13 +1,5 @@
 #include "simple_mesh.hpp"
 
-SimpleMeshData concatenate( SimpleMeshData aM, SimpleMeshData const& aN )
-{
-	aM.positions.insert( aM.positions.end(), aN.positions.begin(), aN.positions.end() );
-	aM.texcoords.insert( aM.texcoords.end(), aN.texcoords.begin(), aN.texcoords.end() );
-	return aM;
-}
-
-
 GLuint create_vao( SimpleMeshData const& aMeshData )
 {
 	// Set up VBO
@@ -23,7 +15,7 @@ GLuint create_vao( SimpleMeshData const& aMeshData )
 	glBufferData( GL_ARRAY_BUFFER, aMeshData.positions.size() * sizeof(Vec3f), aMeshData.positions.data(), GL_STATIC_DRAW );
 
 	glBindBuffer( GL_ARRAY_BUFFER, texCoordVBO );
-	glBufferData( GL_ARRAY_BUFFER, aMeshData.texcoords.size() * sizeof(Vec3f), aMeshData.texcoords.data(), GL_STATIC_DRAW );
+	glBufferData( GL_ARRAY_BUFFER, aMeshData.texcoords.size() * sizeof(Vec2f), aMeshData.texcoords.data(), GL_STATIC_DRAW );
 
 
 	// Set up VAO
@@ -59,7 +51,6 @@ GLuint create_vao( SimpleMeshData const& aMeshData )
 	glDeleteBuffers( 1, &positionVBO );
 	glDeleteBuffers( 1, &texCoordVBO );
 
-	//TODO: implement me
-	return 0;
+	return vao;
 }
 
